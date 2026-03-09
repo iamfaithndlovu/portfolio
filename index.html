@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Faith Ndlovu — Frontend Developer & Penetration Tester portfolio. South Africa." />
+    <title>Faith Ndlovu — Dev & Security</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Custom cursor: crosshair -->
+    <div class="cursor-cross" id="cursorCross">
+      <span class="ch-h"></span>
+      <span class="ch-v"></span>
+      <span class="ch-dot"></span>
+    </div>
+
+    <!-- Noise overlay -->
+    <div class="noise"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <img src="neeman-logo.png" alt="Ne'eman logo" class="nav-logo-img" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#hacker-terminal" class="nav-link">Terminal</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#badges" class="nav-link">Badges</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+          <span></span><span></span>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#hacker-terminal" class="mobile-link">Terminal</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#badges" class="mobile-link">Badges</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+      <div class="hero-content">
+        <p class="hero-tag reveal-up">Available for work &bull; South Africa</p>
+        <h1 class="hero-title">
+          <span class="reveal-up delay-1">Faith</span>
+          <span class="reveal-up delay-2">Ndlovu</span>
+        </h1>
+        <p class="hero-roles reveal-up delay-3">
+          <span class="role-item">Frontend Developer</span>
+          <span class="role-divider">&amp;</span>
+          <span class="role-item accent">Penetration Tester</span>
+        </p>
+        <p class="hero-sub reveal-up delay-4">
+          I build clean interfaces for the web<br />and find the holes in them.
+        </p>
+        <div class="hero-cta reveal-up delay-5">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll reveal-up delay-6">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2 class="section-title reveal-up">About Me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal-up">
+            <p>
+              Hey — I'm Faith, a self-taught developer and security enthusiast from
+              <em>South Africa</em>. I thrive at the intersection of
+              <em>creative front-end development</em> and
+              <em>offensive security</em> — building experiences that look sharp, and
+              stress-testing systems to make them resilient.
+            </p>
+            <p>
+              Currently levelling up my JavaScript and diving deep into React while
+              grinding through ethical hacking labs. When I'm not crafting UIs I'm running
+              recon with Nmap, hunting web vulns in Burp Suite, or writing utility
+              scripts in Python.
+            </p>
+            <div class="about-badges">
+              <span class="badge">Currently Learning React</span>
+              <span class="badge">CTF Player</span>
+              <span class="badge">Open to Work</span>
+              <span class="badge">South Africa</span>
+              <span class="badge">Ethical Hacker</span>
+            </div>
+          </div>
+          <div class="about-visual reveal-up delay-2">
+            <div class="terminal">
+              <div class="terminal-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">whoami.sh</span>
+              </div>
+              <div class="terminal-body" id="terminalBody">
+                <div class="term-line"><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+                <div class="term-line output">faith_ndlovu</div>
+                <div class="term-line"><span class="prompt">$</span> <span class="cmd">_</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hacker Terminal Page -->
+    <section class="hacker-terminal-section section" id="hacker-terminal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2 class="section-title reveal-up">The Hacker Side</h2>
+        </div>
+
+        <!-- Quote of the day -->
+        <div class="quote-widget reveal-up" id="quoteWidget">
+          <div class="quote-terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">quote_of_the_day.sh</span>
+            </div>
+            <div class="quote-body">
+              <p class="quote-prompt"><span class="prompt">$</span> <span class="cmd">cat /etc/motd</span></p>
+              <blockquote class="quote-text" id="quoteText"></blockquote>
+              <p class="quote-author" id="quoteAuthor"></p>
+              <p class="quote-prompt quote-next-line">
+                <span class="prompt">$</span>
+                <button class="quote-refresh-btn" id="quoteRefresh" aria-label="Next quote">
+                  ./next_quote.sh <span class="quote-refresh-icon">&#8635;</span>
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Pentesting Skills Terminal -->
+        <div class="pentest-grid reveal-up delay-2">
+          <div class="pentest-terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">core_pentest_skills.sh</span>
+            </div>
+            <div class="terminal-body pentest-body" id="pentestBody">
+              <div class="term-line"><span class="prompt">$</span> <span class="cmd">cat pentesting_roadmap.txt</span></div>
+              <div class="term-line output"></div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Reconnaissance &amp; OSINT</span></div>
+              <div class="term-line output phase-desc">theHarvester, Maltego, Shodan, Google Dorking</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Vulnerability Scanning</span></div>
+              <div class="term-line output phase-desc">Nmap, Nessus, OpenVAS</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Web App Hacking</span></div>
+              <div class="term-line output phase-desc">OWASP Top 10, SQLi, XSS, CSRF, IDOR — Burp Suite</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Network Penetration</span></div>
+              <div class="term-line output phase-desc">MITM, ARP Spoofing, Password Sniffing, Lateral Movement</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Exploitation</span></div>
+              <div class="term-line output phase-desc">Metasploit, Custom Exploits, CVE Weaponization</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Post-Exploitation</span></div>
+              <div class="term-line output phase-desc">Privesc, Persistence, Pivoting, Mimikatz, Track Covering</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Password Attacks</span></div>
+              <div class="term-line output phase-desc">Hashcat, John the Ripper, Credential Stuffing</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Social Engineering</span></div>
+              <div class="term-line output phase-desc">Phishing Simulations, Pretexting, Human Element</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Wireless Security</span></div>
+              <div class="term-line output phase-desc">WPA2 Cracking, Evil Twin, Rogue APs — Aircrack-ng</div>
+              <div class="term-line output"></div>
+              <div class="term-line"><span class="prompt-yellow">[*]</span> <span class="cmd">Status: Learning &amp; Practicing daily</span></div>
+              <div class="term-line"><span class="prompt-yellow">[*]</span> <span class="cmd">Location: South Africa</span></div>
+              <div class="term-line"><span class="prompt">$</span> <span class="typed-cursor">_</span></div>
+            </div>
+          </div>
+
+          <!-- Networking Knowledge -->
+          <div class="pentest-terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">networking_basics.sh</span>
+            </div>
+            <div class="terminal-body pentest-body">
+              <div class="term-line"><span class="prompt">$</span> <span class="cmd">nmap -sV --script=vuln target</span></div>
+              <div class="term-line output"></div>
+              <div class="term-line output">Starting Nmap 7.94 ( https://nmap.org )</div>
+              <div class="term-line output">Scan report for target (192.168.1.1)</div>
+              <div class="term-line output"></div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Networking Basics</span></div>
+              <div class="term-line output phase-desc">TCP/IP, DNS, DHCP, Subnetting, OSI Model</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Tools in Use</span></div>
+              <div class="term-line output phase-desc">Kali Linux, Nmap, Wireshark, Metasploit</div>
+              <div class="term-line output phase-desc">Burp Suite, Python Scripting</div>
+              <div class="term-line"><span class="prompt-green">[+]</span> <span class="skill-phase">Learning Path</span></div>
+              <div class="term-line output phase-desc">Cisco Intro to Cybersecurity &#10003;</div>
+              <div class="term-line output phase-desc">Cisco Networking Basics &#10003;</div>
+              <div class="term-line output phase-desc">Cisco Ethical Hacker &#10003;</div>
+              <div class="term-line output phase-desc">FNB App Academy &#10003;</div>
+              <div class="term-line output"></div>
+              <div class="term-line"><span class="prompt-yellow">[*]</span> <span class="cmd">4 certifications earned</span></div>
+              <div class="term-line"><span class="prompt">$</span> <span class="typed-cursor">_</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2 class="section-title reveal-up">Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Security -->
+          <div class="skill-card reveal-up" data-delay="0">
+            <div class="skill-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="skill-card-title">Security</h3>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-name">Kali Linux</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Nmap</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Wireshark</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Metasploit</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Burp Suite</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">OSINT &amp; Recon <span class="learning-tag">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill learning" data-width="45"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Web App Hacking <span class="learning-tag">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill learning" data-width="50"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Development -->
+          <div class="skill-card reveal-up" data-delay="1">
+            <div class="skill-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="skill-card-title">Development</h3>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-name">HTML</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">CSS</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">JavaScript <span class="learning-tag">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill learning" data-width="55"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">React <span class="learning-tag">Learning</span></span>
+                <div class="skill-bar"><div class="skill-fill learning" data-width="30"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Networking Basics</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2 class="section-title reveal-up">Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card reveal-up" data-delay="0">
+            <div class="project-img-wrap">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/my%20security%20awareness%20app-1bEj76v2F3ZShpXLH8lKs71DMj9ItS.jpg"
+                alt="Security Awareness Hub — network shield visualization"
+                class="project-img"
+              />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-type security">Security</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Security Awareness Hub</h3>
+              <p class="project-desc">
+                A dedicated platform raising cybersecurity awareness — covering phishing, social engineering,
+                best practices and defensive measures for everyday users.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Cybersecurity</span>
+              </div>
+              <a
+                href="https://security-awareness.0xneem.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                aria-label="View Security Awareness Hub project"
+              >
+                <span>View Project</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal-up" data-delay="1">
+            <div class="project-img-wrap">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/python%20password%20generator-huTjmGRefK6x9xafLNlWtDV9vuIrqc.jpg"
+                alt="Password Generator — code terminal screenshot"
+                class="project-img"
+              />
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-type dev">Development</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Password Generator</h3>
+              <p class="project-desc">
+                A lightweight but powerful password generator built in Python &amp; JavaScript.
+                Generates strong, customizable passwords with configurable length, symbols, numbers, and case options.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Python</span>
+              </div>
+              <a
+                href="https://github.com/iamfaithndlovu/password-generator"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                aria-label="View Password Generator on GitHub"
+              >
+                <span>View on GitHub</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges / Certifications -->
+    <section class="badges-section section" id="badges">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2 class="section-title reveal-up">Certifications</h2>
+        </div>
+        <p class="badges-intro reveal-up">Issued credentials that back up the grind.</p>
+
+        <div class="badges-grid">
+          <!-- Badge 1 -->
+          <div class="badge-card reveal-up" data-delay="0">
+            <div class="badge-icon-wrap badge-cisco">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="badge-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="badge-info">
+              <span class="badge-issuer">Cisco Networking Academy</span>
+              <h3 class="badge-title">Introduction to Cybersecurity</h3>
+              <span class="badge-date">January 16, 2024</span>
+            </div>
+            <a
+              href="https://blobs.vusercontent.net/blob/Introduction_to_Cybersecurity_Badge20240127-29-dyep0y-16wzQgVT5QbdRsk9pV3qSDDNGvUQbw.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="badge-view"
+              aria-label="View Introduction to Cybersecurity badge"
+            >View</a>
+          </div>
+
+          <!-- Badge 2 -->
+          <div class="badge-card reveal-up" data-delay="1">
+            <div class="badge-icon-wrap badge-cisco">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="badge-svg"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="badge-info">
+              <span class="badge-issuer">Cisco Networking Academy</span>
+              <h3 class="badge-title">Networking Basics</h3>
+              <span class="badge-date">January 27, 2024</span>
+            </div>
+            <a
+              href="https://blobs.vusercontent.net/blob/Networking_Basics_Badge20240127-29-318tv0-pDBRbEKqMxau9lOUgcUTmt0oXgBeCe.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="badge-view"
+              aria-label="View Networking Basics badge"
+            >View</a>
+          </div>
+
+          <!-- Badge 3 -->
+          <div class="badge-card reveal-up" data-delay="2">
+            <div class="badge-icon-wrap badge-ethical">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="badge-svg"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <div class="badge-info">
+              <span class="badge-issuer">Cisco Networking Academy</span>
+              <h3 class="badge-title">Ethical Hacker</h3>
+              <span class="badge-date">January 27, 2024</span>
+            </div>
+            <a
+              href="https://blobs.vusercontent.net/blob/Ethical_Hacker_Badge20240127-29-z8bjdg-OeHeXJ2NW79sJIiza2LMIqCOCmIsXR.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="badge-view"
+              aria-label="View Ethical Hacker badge"
+            >View</a>
+          </div>
+
+          <!-- Badge 4 -->
+          <div class="badge-card reveal-up" data-delay="3">
+            <div class="badge-icon-wrap badge-fnb">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="badge-svg"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="badge-info">
+              <span class="badge-issuer">FNB App Academy</span>
+              <h3 class="badge-title">App Development</h3>
+              <span class="badge-date">July 13, 2025</span>
+            </div>
+            <a
+              href="https://blobs.vusercontent.net/blob/fnb%20app%20academy-ZZmbCzrqXZBUu8lpU3ENGIO4HCZuRL.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="badge-view"
+              aria-label="View FNB App Academy badge"
+            >View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2 class="section-title reveal-up">Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-left reveal-up">
+            <p class="contact-lead">
+              Got a project, a CTF team, or just want to chat security and code? I'm always up for it.
+            </p>
+            <a href="mailto:faithfulndlovu0@gmail.com" class="contact-email">
+              faithfulndlovu0@gmail.com
+            </a>
+
+            <div class="social-links">
+              <!-- GitHub -->
+              <a
+                href="https://github.com/iamfaithndlovu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="GitHub"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/npcwithwifi0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="Instagram"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.163 12 18.163s6.162-2.759 6.162-6.162S15.403 5.838 12 5.838zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <!-- Discord -->
+              <a
+                href="https://discord.com/users/npcwithwifi0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="Discord"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right reveal-up delay-2">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit" id="formSubmit">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" aria-hidden="true">Sending...</span>
+              </button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <p class="footer-copy">
+            &copy; <span id="year"></span> Faith Ndlovu — Built with HTML, CSS &amp; JS &bull; South Africa
+          </p>
+          <a href="#hero" class="footer-top" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
